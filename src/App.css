@@ -30,8 +30,10 @@
   padding: 0.65rem 0.75rem;
   color: var(--text);
   text-decoration: none;
+  font-weight: 600;
   border-left: 3px solid transparent;
-  transition: color 0.2s ease;
+  border-radius: 0 5px 5px 0;
+  transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
 }
 
 .site-nav a:hover,
@@ -39,6 +41,13 @@
   color: var(--accent);
   background: var(--accent-light);
   border-left-color: var(--accent);
+}
+
+.site-nav a.active { box-shadow: inset 0 0 0 1px rgb(53 92 114 / 9%); }
+.site-nav a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+@media (hover: hover) and (pointer: fine) {
+  .site-nav a:hover { transform: translateX(4px); }
 }
 
 main.page-content { min-width: 0; padding: 2.5rem clamp(1.5rem, 4vw, 4rem) 4rem; }
@@ -94,6 +103,12 @@ main.page-content { min-width: 0; padding: 2.5rem clamp(1.5rem, 4vw, 4rem) 4rem;
 }
 
 .primary-button { background: var(--accent); color: #fff; }
+.primary-button,
+.secondary-button,
+.about-button {
+  border-radius: 5px;
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease, color 180ms ease;
+}
 
 .secondary-button,
 .about-button {
@@ -106,6 +121,13 @@ main.page-content { min-width: 0; padding: 2.5rem clamp(1.5rem, 4vw, 4rem) 4rem;
 .primary-button:hover { background: #29495c; }
 .secondary-button:hover,
 .about-button:hover { background: var(--accent-light); }
+.primary-button:focus-visible,
+.secondary-button:focus-visible,
+.about-button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.primary-button:active,
+.secondary-button:active,
+.about-button:active { transform: scale(0.98); }
 
 .section-heading {
   margin-bottom: 1.75rem;
@@ -117,6 +139,23 @@ main.page-content { min-width: 0; padding: 2.5rem clamp(1.5rem, 4vw, 4rem) 4rem;
 .about-content,
 .projects-grid { max-width: 760px; margin-inline: auto; }
 .about-content p { line-height: 1.75; }
+
+.about-more {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transform: translateY(-0.5rem);
+  transition: grid-template-rows 360ms cubic-bezier(0.2, 0.7, 0.2, 1), opacity 240ms ease, transform 360ms ease;
+}
+
+.about-more.is-open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-more-content { min-height: 0; overflow: hidden; }
+.about-more-content p { margin-top: 1rem; }
 
 .about-panel {
   max-width: 620px;
@@ -178,6 +217,17 @@ main.page-content { min-width: 0; padding: 2.5rem clamp(1.5rem, 4vw, 4rem) 4rem;
 .project-card strong { color: var(--text-h); }
 
 @media (hover: hover) and (pointer: fine) {
+  .hero-copy .primary-button:hover,
+  .hero-copy .secondary-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgb(30 42 53 / 16%);
+  }
+
+  .about-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgb(30 42 53 / 12%);
+  }
+
   .skills-grid .skill-card:hover {
     transform: translateY(-4px);
     border-color: #b9cbd3;
@@ -194,8 +244,21 @@ main.page-content { min-width: 0; padding: 2.5rem clamp(1.5rem, 4vw, 4rem) 4rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .site-nav a,
+  .about-more,
+  .hero-copy .primary-button,
+  .hero-copy .secondary-button,
+  .about-button,
   .skills-grid .skill-card,
   .project-card { transition: none; }
+
+  .site-nav a:hover { transform: none; }
+  .hero-copy .primary-button:hover,
+  .hero-copy .secondary-button:hover,
+  .hero-copy .primary-button:active,
+  .hero-copy .secondary-button:active,
+  .about-button:hover,
+  .about-button:active { transform: none; }
 }
 
 .contact-section { max-width: 760px; }

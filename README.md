@@ -80,7 +80,7 @@ src/
 
 ## Repositorio
 
-[Ver el repositorio en GitHub](https://github.com/GeckoAgar/tp2-portafolio-reactRouterDom)
+[Ver el repositorio en GitHub](https://github.com/GeckoAgar/tp2-com7-moretta-gerardo-agustin)
 
 ## Contacto
 
