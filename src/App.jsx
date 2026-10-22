@@ -8,7 +8,13 @@ import Projects from "./Pages/Projects";
 import Contact from "./Pages/Contact";
 
 function App() {
-  const habilidades = ["HTML", "CSS", "JavaScript", "React", "Git", "GitHub", "Express", "C#", "SQL"];
+  const categoriasHabilidades = [
+    { nombre: "Lenguajes", habilidades: ["JavaScript"] },
+    { nombre: "Frontend", habilidades: ["HTML", "CSS"] },
+    { nombre: "Bases de datos", habilidades: ["SQL"] },
+    { nombre: "Herramientas", habilidades: ["Git", "GitHub"] },
+  ];
+  const habilidadesAprendiendo = ["React", "Express"];
 
   const proyectos = [
     {
@@ -42,7 +48,15 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/skills" element={<Skills habilidades={habilidades} />} />
+          <Route
+            path="/skills"
+            element={
+              <Skills
+                categorias={categoriasHabilidades}
+                aprendiendo={habilidadesAprendiendo}
+              />
+            }
+          />
           <Route path="/projects" element={<Projects proyectos={proyectos} />} />
           <Route path="/contact" element={<Contact email="agustinmoretta2016@gmail.com" />} />
           <Route path="*" element={<Navigate to="/" replace />} />

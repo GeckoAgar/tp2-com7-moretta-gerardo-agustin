@@ -95,6 +95,7 @@ main.page-content { min-width: 0; padding: 2.5rem clamp(1.5rem, 4vw, 4rem) 4rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
   margin-top: 1.5rem;
   padding: 0.75rem 1.25rem;
   font-weight: 600;
@@ -167,29 +168,51 @@ main.page-content { min-width: 0; padding: 2.5rem clamp(1.5rem, 4vw, 4rem) 4rem;
 
 .about-button { margin-top: 1rem; }
 
+.skills-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+  gap: 1.25rem 2rem;
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.skill-category { padding-top: 0.75rem; border-top: 1px solid var(--border); }
+.skill-category h3,
+.learning-section h3 { margin: 0; color: var(--text-h); font-size: 1.1rem; }
+
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 160px));
-  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(90px, max-content));
+  gap: 0.6rem;
   width: 100%;
-  margin: 2rem 0 0;
+  margin: 0.75rem 0 0;
   padding: 0;
   list-style: none;
-  justify-content: center;
+  justify-content: start;
 }
 
 .skills-grid .skill-card {
-  padding: 0.75rem;
+  padding: 0.45rem 0.75rem;
   color: var(--text-h);
   text-align: center;
   font-weight: 700;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-top: 2px solid var(--accent);
-  border-radius: 6px;
+  border-left: 2px solid var(--accent);
+  border-radius: 4px;
   box-shadow: 0 3px 12px rgb(30 42 53 / 7%);
   transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
 }
+
+.learning-section {
+  margin-top: 2.5rem;
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  background: var(--accent-light);
+  border-left: 3px solid var(--accent);
+}
+
+.learning-section p { margin-top: 0.4rem; color: var(--text); }
 
 .projects-grid {
   display: grid;
@@ -262,7 +285,7 @@ main.page-content { min-width: 0; padding: 2.5rem clamp(1.5rem, 4vw, 4rem) 4rem;
 }
 
 .contact-section { max-width: 760px; }
-.contact-email { display: inline-block; margin-top: 1rem; color: var(--accent); font-weight: 700; }
+.contact-email { display: inline-block; margin-top: 1rem; color: var(--accent); font-weight: 700; overflow-wrap: anywhere; }
 .contact-copyright { margin-top: 3rem; font-size: 0.9rem; }
 
 @media (max-width: 768px) {
