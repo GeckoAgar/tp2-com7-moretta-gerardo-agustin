@@ -1,3 +1,5 @@
+import ProjectCard from "../components/ProjectCard";
+
 function Projects({ proyectos }) {
   return (
     <section id="proyectos" className="projects-section section">
@@ -7,15 +9,7 @@ function Projects({ proyectos }) {
 
       <div className="projects-grid">
         {proyectos.map((proyecto) => (
-          <article key={proyecto.title} className="project-card">
-            <h3>{proyecto.title}</h3>
-
-            <p>{proyecto.description}</p>
-
-            <p>
-              <strong>Tecnologías:</strong> {proyecto.technologies}
-            </p>
-          </article>
+          <ProjectCard key={proyecto.title} proyecto={proyecto} />
         ))}
       </div>
     </section>

@@ -1,3 +1,5 @@
+import SkillCard from "../components/SkillCard";
+
 function Skills({ habilidades }) {
   return (
     <section id="habilidades" className="skills-section section">
@@ -7,7 +9,7 @@ function Skills({ habilidades }) {
 
       <ul className="skills-grid">
         {habilidades.map((habilidad) => (
-          <li key={habilidad}>{habilidad}</li>
+          <SkillCard key={habilidad} habilidad={habilidad} />
         ))}
       </ul>
     </section>

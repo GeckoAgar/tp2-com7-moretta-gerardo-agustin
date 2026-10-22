@@ -1,8 +1,9 @@
-function Hero() {
+import { Link } from "react-router-dom";
+
+function Home() {
   return (
     <section id="inicio" className="section hero-section">
       <div className="hero-copy">
-
         <h2>Agustin Moretta</h2>
 
         <h3>Estudiante - Tecnicatura en programación</h3>
@@ -15,16 +16,16 @@ function Hero() {
         </p>
 
         <div>
-          <a className="primary-button" href="#proyectos">
+          <Link className="primary-button" to="/projects">
             Ver mis proyectos
-          </a>
-          <a className="secondary-button" href="#sobre-mi">
+          </Link>
+          <Link className="secondary-button" to="/about">
             Conóceme
-          </a>
+          </Link>
         </div>
       </div>
     </section>
   );
 }
 
-export default Hero;
+export default Home;

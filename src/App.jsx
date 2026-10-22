@@ -1,9 +1,11 @@
 import Header from "./components/Header";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Skills from "./components/Skills";
-import Projects from "./components/Projects";
-import Footer from "./components/Footer";
+import Sidebar from "./components/Sidebar";
+import { Navigate, Route, Routes } from "react-router-dom";
+import Home from "./Pages/Home";
+import About from "./Pages/About";
+import Skills from "./Pages/Skills";
+import Projects from "./Pages/Projects";
+import Contact from "./Pages/Contact";
 
 function App() {
   const habilidades = ["HTML", "CSS", "JavaScript", "React", "Git", "GitHub", "Express", "C#", "SQL"];
@@ -30,16 +32,23 @@ function App() {
   ];
 
   return (
-    <>
-      <Header titulo="Portafolio TP 1" />
-      <main>
-        <Hero />
-        <About />
-        <Skills habilidades={habilidades} />
-        <Projects proyectos={proyectos} />
+    <div className="portfolio-layout">
+      <aside className="portfolio-sidebar">
+        <Header titulo="Portafolio TP 1" />
+        <Sidebar />
+      </aside>
+
+      <main className="page-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/skills" element={<Skills habilidades={habilidades} />} />
+          <Route path="/projects" element={<Projects proyectos={proyectos} />} />
+          <Route path="/contact" element={<Contact email="agustinmoretta2016@gmail.com" />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
       </main>
-      <Footer email="agustinmoretta2016@gmail.com" />
-    </>
+    </div>
   );
 }
 
