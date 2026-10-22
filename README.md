@@ -8,50 +8,53 @@
 - Carrera: Tecnicatura en Programacion
 - Universidad: Universidad Tecnologica Nacional (UTN)
 - Facultad: Facultad Regional Tucuman (FRT)
-- Trabajo practico 1
+- Trabajo practico 2
 
-## Descripcion del proyecto
+## Descripcion
 
-Este es mi portfolio personal, realizado como parte del TP 1 de la Tecnicatura en Programacion en la FRT - UTN.
-
-La pagina me sirve para presentar quien soy, las tecnologias que estoy aprendiendo y algunos proyectos con los que practico desarrollo web.
+Portfolio personal desarrollado con React. La aplicacion organiza la informacion en paginas y permite navegar entre ellas con React Router DOM. Incluye un menu lateral persistente y un area principal cuyo contenido cambia segun la ruta.
 
 ## Tecnologias
 
-- React
-- JavaScript
+- React y JavaScript
+- React Router DOM
+- Vite
 - HTML y CSS
 - Git y GitHub
 
-## Que incluye
+## Paginas y rutas
 
-- Informacion personal y profesional.
-- Secciones de habilidades y proyectos.
-- Navegacion entre las distintas partes de la pagina.
-- Componentes reutilizables para el header, hero, contenido y footer.
-- Uso de props para enviar datos entre componentes.
-- Renderizado de habilidades y proyectos con `map()`.
-- Boton "Ver mas" con `useState` y renderizado condicional.
-- Enlace de contacto por email.
+- `/`: presentacion e introduccion al portfolio.
+- `/about`: perfil personal, intereses y objetivos.
+- `/skills`: tecnologias y herramientas.
+- `/projects`: galeria de proyectos con descripcion y tecnologias.
+- `/contact`: correo electronico de contacto.
+
+El menu ocupa aproximadamente el 30 % del ancho en pantallas grandes y el contenido el 70 %. En pantallas pequenas, ambas areas se apilan. La opcion activa del menu se resalta visualmente.
+
+## Componentes reutilizables
+
+- `Sidebar`: enlaces de navegacion entre rutas.
+- `ProjectCard`: presentacion de cada proyecto.
+- `SkillCard`: presentacion de cada habilidad.
+- `Header`: identidad del portfolio en el menu lateral.
+
+Las paginas reciben los datos de habilidades y proyectos mediante props y los renderizan con `map()`. La pagina Sobre mi incluye un boton para desplegar informacion adicional.
 
 ## Como ejecutar el proyecto
 
-Entrar en la carpeta del proyecto:
-
-```bash
-cd tp1-portafolio
-```
-
-Primero hay que instalar las dependencias:
+Desde la carpeta del proyecto, instalar las dependencias e iniciar el servidor de desarrollo:
 
 ```bash
 npm install
+npm run dev
 ```
 
-Para iniciar el servidor de desarrollo:
+Para validar el build y ejecutar ESLint:
 
 ```bash
-npm run dev
+npm run build
+npm run lint
 ```
 
 ## Estructura principal
@@ -61,18 +64,23 @@ src/
 ├── App.jsx
 ├── App.css
 ├── index.css
+├── main.jsx
+├── Pages/
+│   ├── About.jsx
+│   ├── Contact.jsx
+│   ├── Home.jsx
+│   ├── Projects.jsx
+│   └── Skills.jsx
 └── components/
-    ├── About.jsx
-    ├── Footer.jsx
     ├── Header.jsx
-    ├── Hero.jsx
-    ├── Projects.jsx
-    └── Skills.jsx
+    ├── ProjectCard.jsx
+    ├── Sidebar.jsx
+    └── SkillCard.jsx
 ```
 
 ## Repositorio
 
-[Ver el repositorio en GitHub](https://github.com/GeckoAgar/tp1-portafolio)
+[Ver el repositorio en GitHub](https://github.com/GeckoAgar/tp2-portafolio-reactRouterDom)
 
 ## Contacto
 

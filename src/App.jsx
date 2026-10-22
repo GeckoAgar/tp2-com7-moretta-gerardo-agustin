@@ -34,7 +34,7 @@ function App() {
   return (
     <div className="portfolio-layout">
       <aside className="portfolio-sidebar">
-        <Header titulo="Portafolio TP 1" />
+        <Header titulo="Portafolio TP 2" />
         <Sidebar />
       </aside>
 

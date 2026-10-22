@@ -147,20 +147,56 @@ main.page-content { min-width: 0; padding: 2.5rem clamp(1.5rem, 4vw, 4rem) 4rem;
   background: var(--surface);
   border: 1px solid var(--border);
   border-top: 2px solid var(--accent);
+  border-radius: 6px;
+  box-shadow: 0 3px 12px rgb(30 42 53 / 7%);
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
 }
 
-.projects-grid { margin-top: 2rem; }
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+  align-items: stretch;
+}
 
 .project-card {
-  padding: 1.5rem 0;
-  text-align: center;
-  border-top: 1px solid var(--border);
+  min-width: 0;
+  padding: 1.5rem;
+  text-align: left;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--accent);
+  border-radius: 6px;
+  box-shadow: 0 3px 12px rgb(30 42 53 / 7%);
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
 }
 
-.project-card + .project-card { border-top-color: var(--accent); }
-.project-card h3 { margin-top: 0; font-size: 1.3rem; }
+.project-card h3 { margin: 0 0 0.75rem; font-size: 1.3rem; }
 .project-card p { line-height: 1.7; }
+.project-card p + p { margin-top: 0.9rem; }
 .project-card strong { color: var(--text-h); }
+
+@media (hover: hover) and (pointer: fine) {
+  .skills-grid .skill-card:hover {
+    transform: translateY(-4px);
+    border-color: #b9cbd3;
+    border-top-color: var(--accent);
+    box-shadow: 0 12px 24px rgb(30 42 53 / 13%);
+  }
+
+  .project-card:hover {
+    transform: translateY(-6px);
+    border-color: #b9cbd3;
+    border-top-color: var(--accent);
+    box-shadow: 0 14px 28px rgb(30 42 53 / 14%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skills-grid .skill-card,
+  .project-card { transition: none; }
+}
 
 .contact-section { max-width: 760px; }
 .contact-email { display: inline-block; margin-top: 1rem; color: var(--accent); font-weight: 700; }
