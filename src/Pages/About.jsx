@@ -33,6 +33,9 @@ function About() {
                 conocimientos y seguir aprendiendo en un entorno profesional.
                 Estoy abierto a colaborar en proyectos, aprender de otros
                 desarrolladores y contribuir con mi entusiasmo y dedicación.
+                <br />
+                Busco mi primera experiencia en programación para seguir
+                creciendo.
               </p>
             </div>
           </div>

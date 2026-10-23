@@ -43,10 +43,21 @@ Las paginas reciben los datos de habilidades y proyectos mediante props y los re
 
 ## Como ejecutar el proyecto
 
-Desde la carpeta del proyecto, instalar las dependencias e iniciar el servidor de desarrollo:
+Entrar en la carpeta del proyecto:
+
+```bash
+cd tp2-com7-moretta-gerardo-agustin
+```
+
+Instalar las dependencias:
 
 ```bash
 npm install
+```
+
+Iniciar el servidor de desarrollo:
+
+```bash
 npm run dev
 ```
 
