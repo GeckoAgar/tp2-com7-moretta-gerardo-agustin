@@ -28,7 +28,7 @@ Portfolio personal desarrollado con React. La aplicacion organiza la informacion
 - `/about`: perfil personal, intereses y objetivos.
 - `/skills`: tecnologias y herramientas.
 - `/projects`: galeria de proyectos con descripcion y tecnologias.
-- `/contact`: correo electronico de contacto.
+- `/contact`: correo electronico y perfil de GitHub para contacto.
 
 El menu ocupa aproximadamente el 30 % del ancho en pantallas grandes y el contenido el 70 %. En pantallas pequenas, ambas areas se apilan. La opcion activa del menu se resalta visualmente.
 
@@ -85,3 +85,5 @@ src/
 ## Contacto
 
 Email: [agustinmoretta2016@gmail.com](mailto:agustinmoretta2016@gmail.com)
+
+GitHub: [GeckoAgar](https://github.com/GeckoAgar)

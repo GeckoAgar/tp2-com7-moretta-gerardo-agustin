@@ -285,7 +285,24 @@ main.page-content { min-width: 0; padding: 2.5rem clamp(1.5rem, 4vw, 4rem) 4rem;
 }
 
 .contact-section { max-width: 760px; }
-.contact-email { display: inline-block; margin-top: 1rem; color: var(--accent); font-weight: 700; overflow-wrap: anywhere; }
+.contact-intro { max-width: 58ch; margin: 0 auto; }
+.contact-methods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.contact-card {
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--accent);
+  border-radius: 6px;
+  box-shadow: 0 3px 12px rgb(30 42 53 / 7%);
+}
+.contact-card h3 { margin: 0 0 0.5rem; color: var(--text-h); }
+.contact-card p { overflow-wrap: anywhere; }
+.contact-card .primary-button { margin-top: 1rem; }
 .contact-copyright { margin-top: 3rem; font-size: 0.9rem; }
 
 @media (max-width: 768px) {
